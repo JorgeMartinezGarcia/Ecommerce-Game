@@ -5,8 +5,7 @@ export default function index() {
   return (
     <div>
       <h2>Games Shop</h2>
-
-      <Button primary>login</Button>
+      <Button primary>Login</Button>
     </div>
   );
 }
