@@ -5,12 +5,19 @@ export class User {
     try {
       const url = `${ENV.API_URL}/${ENV.ENDPOINTS.USERS_ME}`;
 
-      const response = await authFetch(url);
-      //const result = await response.json();
+      const params = {
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAxMjI4ODQ5LCJleHAiOjE3MDM4MjA4NDl9.WlfC0LKITZsaiPUk9YbK_SkhiooGLo08CKKtH5PbXQ8",
+        },
+      };
 
-      //if (response.status !== 200) throw result;
+      const response = await fetch(url, params);
+      const result = await response.json();
 
-      //return result;
+      if (response.status !== 200) throw result;
+
+      return result;
     } catch (error) {
       throw error;
     }
