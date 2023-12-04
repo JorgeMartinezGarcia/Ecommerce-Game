@@ -17,9 +17,9 @@ export async function authFetch(url, params) {
     } else {
       const paramsTemp = {
         ...params,
-        header: {
+        headers: {
           ...params?.headers,
-          Authorization: `Bearer ${token}`,
+          'Authorization': `Bearer ${token}`,
         },
       };
 
