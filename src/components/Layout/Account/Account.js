@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { useAuth } from "@/hooks";
 import styles from "./Account.module.scss";
 
+//total ...
 const total =5;
 
 export  function Account() {
