@@ -13,6 +13,7 @@
     "formik": "^2.4.5",
     "jwt-decode": "^4.0.0",
     "jwt-js-decode": "^1.8.2",
+    "lodash": "^4.17.21",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",

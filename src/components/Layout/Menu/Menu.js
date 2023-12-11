@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Image, Icon, Input } from "semantic-ui-react";
+import Link from "next/link";
+import { map } from "lodash";
 import { Platform } from "@/api";
 import styles from "./Menu.module.scss";
 
@@ -22,8 +24,13 @@ export function Menu(props) {
   }, []);
 
   return (
-    <div>
-      <h2>Menu</h2>
+    <div className={styles.platforms}>
+      {map(platforms, (platform) => (
+        <Link key={platform.id} href={`/games/${platform.attributes.slug}`}>
+          <Image src={platform.attributes.icon.data.attributes.url} />
+          {platform.attributes.title}
+        </Link>
+      ))}
     </div>
   );
 }
