@@ -16,15 +16,15 @@ export function AuthProvider(props) {
     (async () => {
       const token = tokenCtrl.getToken();
 
-      if(!token){
+      if (!token) {
         logout();
         setLoading(false);
         return;
       }
 
-      if(tokenCtrl.hasExpired(token)) {
+      if (tokenCtrl.hasExpired(token)) {
         logout();
-      }else {
+      } else {
         await login(token);
       }
     })();
@@ -47,9 +47,9 @@ export function AuthProvider(props) {
     tokenCtrl.removeToken();
     setToken(null);
     setUser(null);
-  }
+  };
 
-  const updateUSer = (key, value) => {
+  const updateUser = (key, value) => {
     setUser({
       ...user,
       [key]: value,
@@ -61,7 +61,7 @@ export function AuthProvider(props) {
     user,
     login,
     logout,
-    updateUSer,
+    updateUser,
   };
 
   if (loading) return null;
