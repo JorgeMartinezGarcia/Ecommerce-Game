@@ -32,6 +32,7 @@ export function ListAddresses(props) {
           key={address.id}
           addressId={address.id}
           address={address.attributes}
+          onReload={onReload}
         />
       ))}
     </div>

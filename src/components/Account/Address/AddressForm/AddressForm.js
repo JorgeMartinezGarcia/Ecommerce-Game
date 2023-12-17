@@ -7,16 +7,20 @@ import { initialValues, validationSchema } from "./AddressForm.form";
 const AddressCtrl = new Address();
 
 export function AddressForm(props) {
-  const { onClose, onReload } = props;
+  const { onClose, onReload, addressId, address } = props;
   const { user } = useAuth();
 
   const formik = useFormik({
-    initialValues: initialValues(),
+    initialValues: initialValues(address),
     validationSchema: validationSchema(),
     validateOnChange: false,
     onSubmit: async (formValue) => {
       try {
-        await AddressCtrl.create(formValue, user.id);
+        if (addressId) {
+          await AddressCtrl.update(formValue, addressId);
+        } else {
+          await AddressCtrl.create(formValue, user.id);
+        }
 
         formik.handleReset();
         onReload();
