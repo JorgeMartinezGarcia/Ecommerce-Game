@@ -14,6 +14,10 @@ export default function Homepage() {
         <Container>
           <Home.LatestGames title="Ultimos lanzamientos" />
         </Container>
+
+        <Separator height={100} />
+
+        <Separator height={100} />
       </BasicLayout>
     </>
   );
