@@ -1,7 +1,7 @@
 import { Container } from "semantic-ui-react";
 import { BasicLayout } from "@/layouts";
 import { Home } from "@/components/Home";
-import { Separator, BarTrust } from "@/components/Shared";
+import { Separator, BarTrust, BannerAd } from "@/components/Shared";
 
 const platformsId = {
   playstation: 1,
@@ -37,6 +37,16 @@ export default function Homepage() {
         </Container>
 
         <Separator height={100} />
+
+        <BannerAd
+          title="Registrate y obten los mejores precios"
+          subtitle="!Compara con otros juegos y elige el tuyo!"
+          btnTitle="Entrar ahora"
+          btnLink="/account"
+          image="/images/img01.png"
+        />
+
+        <Separator height={50} />
       </BasicLayout>
     </>
   );
