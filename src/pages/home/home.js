@@ -47,6 +47,16 @@ export default function Homepage() {
         />
 
         <Separator height={50} />
+
+        <Container>
+          <Home.LatestGames
+            title="Xbox"
+            limit={3}
+            platformId={platformsId.xbox}
+          />
+        </Container>
+
+        <Separator height={100} />
       </BasicLayout>
     </>
   );
